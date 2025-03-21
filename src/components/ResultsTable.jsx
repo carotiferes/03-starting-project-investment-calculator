@@ -1,5 +1,15 @@
 import { formatter } from "../util/investment";
 import { calculateInvestmentResults } from "../util/investment";
+import styled from "styled-components";
+
+const StyledTh = styled.th`
+	color: ${({$invalid}) => $invalid ? 'red' : 'black'};
+	background-color: white;
+	& a {
+		font-size: 14px;
+	}
+`
+// & a --> a inside th
 
 export default function ResultsTable({values}) {
   const data = calculateInvestmentResults(values);
@@ -10,7 +20,7 @@ export default function ResultsTable({values}) {
 			<table id="result" className="center">
 				<thead>
 					<tr>
-						<th>Year</th>
+						<StyledTh $invalid={false}>Year</StyledTh>
 						<th>Investment Value</th>
 						<th>Interest (Year)</th>
 						<th>Total Interest</th>

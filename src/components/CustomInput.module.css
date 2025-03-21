@@ -1,0 +1,5 @@
+/* USE MODULES LIKE THIS TO SCOPE STYLING TO A SPECIFIC COMPONENT */
+.testClass {
+  color: rgb(177, 185, 195);
+  background-color: green;
+}
